@@ -1,0 +1,6 @@
+<%= grid(@people_debt_100, show_filters: :when_filtered) do |task|
+  task.column name: 'Адрес', attribute: 'address'
+  task.column name: 'Задолженность', attribute: 'debt'
+  task.column name: 'Оплата', attribute: 'payment'
+  task.column name: 'Дата последней оплаты', attribute: 'last_payment_date'
+end -%>

@@ -1,0 +1,47 @@
+
+<div class="wrapper">
+  <div class="container">
+  <script type="text/javascript">
+  	$(document).ready(function(){
+    $("#date-select select").on("change",function(){
+      val = $(this).val();
+      window.location = '/finance?date='+ val;
+      cache: false
+    });
+});
+  </script>
+	<div id="date-select"	>
+		<h4>Выберите интересующий Вас период: 	<%= collection_select :date, :id, Period.all, :id, :description, {:selected => params[:period_id]} %></h4>
+	</div>
+
+
+
+<div class="col-md-4">
+		<div class="card-box">
+		<%= high_chart("some_id2", @pie_calculation) %>
+		</div>	
+</div>
+<div class="col-md-4">
+		<div class="card-box">
+		<%= high_chart("some_id1", @pie_payment) %>
+		</div>	
+</div>
+<div class="col-md-4">
+		<div class="card-box">
+		<%= high_chart("some_id3", @pie_debt) %>
+		</div>	
+</div>
+
+
+<div class="col-md-12">
+	<div class="card-box">
+		<%= high_chart("some_id", @col_chart1) %>
+	</div>	
+</div>
+<div class="col-md-12">
+	<div class="card-box">
+		<%= high_chart("some_id4", @line_debt) %>
+	</div>	
+</div>
+</div>
+</div>

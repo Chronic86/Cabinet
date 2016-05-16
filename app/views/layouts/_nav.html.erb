@@ -1,0 +1,75 @@
+        <!-- Navigation Bar-->
+        <header id="topnav">
+            <div class="topbar-main">
+                <div class="container">
+
+                    <!-- Logo container-->
+                    <div class="logo">
+                        <a href="index.html.erb" class="logo"> <span>РКЦ ЖКХ Сургутского района</span> </a>
+                    </div>
+                    <!-- End Logo container-->
+
+                    <div class="menu-extras">
+
+                        <ul class="nav navbar-nav navbar-right pull-right">
+
+                            <li class="dropdown">
+
+                                <%= link_to 'Профиль', people_path, class: "dropdown-toggle waves-effect waves-light profile btn btn-md" %>
+
+                            </li>
+                        </ul>
+
+                        <div class="menu-item">
+                            <!-- Mobile menu toggle-->
+                            <a class="navbar-toggle">
+                                <div class="lines">
+                                    <span></span>
+                                    <span></span>
+                                    <span></span>
+                                </div>
+                            </a>
+                            <!-- End mobile menu toggle-->
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            <!-- End topbar --> 
+            <!-- Navbar Start -->
+            <div class="navbar-custom">
+                <div class="container">
+                <div id="navigation">
+                    <!-- Navigation Menu-->
+                    <ul class="navigation-menu">
+                        <li class="has-submenu">
+                             <%=link_to  ' Основаная панель', dashboard_index_url, class: 'glyphicon glyphicon-th-large' %>
+                        </li>
+                        <li class="has-submenu">
+                            <%=link_to " Неплательщики", people_path, class: 'glyphicon glyphicon-user'%>
+                            <ul class="submenu">
+                                <li><a href="ui-buttons.html">#</a></li>
+                                <li><a href="ui-panels.html">#</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                            <%=link_to " Поставщики услуг", finance_index_path, class: 'glyphicon glyphicon-home'%>
+                            <ul class="submenu">
+                                <li><a href="components-grid.html">Подробная информация</a></li>
+
+                            </ul>
+                        </li>
+
+                        <li class="has-submenu">
+                             <%=link_to  ' Информация по поселению', dashboard_index_url, class: 'glyphicon glyphicon-globe' %>
+                        </li>
+
+                    </ul>
+                    <!-- End navigation menu -->
+                </div>
+            </div>
+            </div>
+        </header>
+        <!-- End Navigation Bar-->
