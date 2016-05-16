@@ -5,9 +5,12 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'dashboard#index'
 
-  resources :people
+  resources :people 
   resources :finance 
   resources :dashboard
+
+  match 'people/show' => 'people#show', :via => :show
+
 
 
   # Example of regular route:
