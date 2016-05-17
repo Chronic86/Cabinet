@@ -14,7 +14,7 @@
                		<%= fa_icon "users", class: "text-danger" %>
                     <div class="wid-icon-info">
                         <p class="text-muted m-b-5 font-13 text-uppercase">Количество неплательщиков</p>
-                        <h4 class="m-t-0 m-b-5 counter"><%= Person.all.count %></h4>
+                        <h4 class="m-t-0 m-b-5 counter"><%= Person.count %></h4>
                     </div>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                 <div>
                		<%= fa_icon "building-o", class: "text-primary" %>
                     <div class="wid-icon-info">
-                        <p class="text-muted m-b-5 font-13 text-uppercase">Информация о ппоставщиках</p>
+                        <p class="text-muted m-b-5 font-13 text-uppercase">Информация о поставщиках</p>
                         <h4 class="m-t-0 m-b-5 counter"><%= Company.all.count %> поставщика</h4>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
 					<%= fa_icon "university", class: "text-success" %>
                     <div class="wid-icon-info">
                         <p class="text-muted m-b-5 font-13 text-uppercase">Колличество лицевых счетов</p>
-                        <h4 class="m-t-0 m-b-5 counter">14 254</h4>
+                        <h4 class="m-t-0 m-b-5 counter">14 254???</h4>
                     </div>
                 </div>
             </div>
@@ -90,10 +90,10 @@
                                     <% @tb_max_debt.each do |t| %>
                                         <tr>
                                             <td><%= t.account %></td>
-                                            <td class="text text-danger"><%= number_to_currency(t.debt, unit: "") %></td>
+                                            <td class="text text-danger"><%= number_to_currency(t.debt, locale: :ru) %></td>
                                             <td><%= t.address %></td>
                                             <td><%= t.last_payment_date %></td>
-                                            <td><%= number_to_currency(t.payment, unit:"") %></td>
+                                            <td><%= number_to_currency(t.payment, locale: :ru) %></td>
                                         </tr>
                                      <% end %>   
                                     </tbody>
@@ -106,10 +106,10 @@
                     <div class="col-lg-4">
                         <div class="card-box widget-user">
                             <div>
-                                <img src="assets/images/users/avatar-1.jpg" class="img-responsive img-circle" alt="user">
+                                <%= image_tag('admin.jpg', class: 'img-responsive img-circle') %>
                                 <div class="wid-u-info">
-                                    <h4 class="m-t-0 m-b-5">Chadengle</h4>
-                                    <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
+                                    <h4 class="m-t-0 m-b-5">Администратор</h4>
+                                    <p class="text-muted m-b-5 font-13">admin@example.com</p>
                                     <small class="text-warning"><b>Admin</b></small>
                                 </div>
                             </div>
@@ -117,25 +117,26 @@
 
                         <div class="card-box widget-user">
                             <div>
-                                <img src="assets/images/users/avatar-2.jpg" class="img-responsive img-circle" alt="user">
+                                <%= image_tag('admin.jpg', class: 'img-responsive img-circle') %>
                                 <div class="wid-u-info">
-                                    <h4 class="m-t-0 m-b-5">Tomaslau</h4>
-                                    <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
-                                    <small class="text-success"><b>User</b></small>
+                                    <h4 class="m-t-0 m-b-5">Администратор</h4>
+                                    <p class="text-muted m-b-5 font-13">admin@example.com</p>
+                                    <small class="text-success"><b>Admin</b></small>
                                 </div>
                             </div>
                         </div>
 
                         <div class="card-box widget-user">
                             <div>
-                                <img src="assets/images/users/avatar-7.jpg" class="img-responsive img-circle" alt="user">
+                                <%= image_tag('admin.jpg', class: 'img-responsive img-circle') %>
                                 <div class="wid-u-info">
-                                    <h4 class="m-t-0 m-b-5">Ok</h4>
-                                    <p class="text-muted m-b-5 font-13">coderthemes@gmail.com</p>
+                                    <h4 class="m-t-0 m-b-5">Администратор</h4>
+                                    <p class="text-muted m-b-5 font-13">admin@example.com</p>
                                     <small class="text-pink"><b>Admin</b></small>
                                 </div>
                             </div>
                         </div>
+                        
 
                     </div>
 

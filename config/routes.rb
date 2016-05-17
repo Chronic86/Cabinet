@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :people 
   resources :finance 
   resources :dashboard
+  resources :information
 
   match 'people/show' => 'people#show', :via => :show
 

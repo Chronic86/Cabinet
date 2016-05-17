@@ -1,0 +1,11 @@
+<%= grid(@people_debt, show_filters: :when_filtered, hide_csv_button: true) do |task|
+  task.column name: 'Лицевой счет', attribute: 'account' 
+  task.column name: 'Адрес', attribute: 'address' 
+  task.column name: 'Задолженность', attribute: 'debt' do |number|
+  	number_to_currency number.debt, locale: :ru
+  end
+  task.column name: 'Оплата', attribute: 'payment' do |number|
+  	number_to_currency number.payment, locale: :ru
+  end
+  task.column name: 'Дата последней оплаты', attribute: 'last_payment_date'
+end -%>

@@ -1,25 +1,17 @@
 <div class="wrapper">
   <div class="container">
-  <div class="row-fluid many-grids-on-page">
-    <div class="col-md-12">
+  <div class="row-fluid">
+      <div class="col-md-12">
+      <button class="wg-external-csv-export-button fa fa-file-excel-o btn btn-primary btn-custom waves-effect w-md waves-light m-b-5" data-grid-name="grid"> Сохранить в CSV</button>
+      </p>
       <div class="card-box">
-        <h4 class="m-t-0 header-title">Задолженность меньше 50 000 (руб.)</h4>
+        <h4 class="m-t-0 header-title">Таблица неплательщиков</h4>
           <div class="example1">
-            <%= render   'grid50' %>
+            <%= render   'grid' %>
           </div>
       </div>
     </div>
   </div>
-  <div class="row-fluid many-grids-on-page">
-    <div class="col-md-12">
-      <div class="card-box">
-        <h4 class="m-t-0 header-title">Задолженность больше 50 000 (руб.)</h4>
-          <div class="example2">
-            <%= render   'grid100' %>
-      </div>
-    </div>
-    </div>
-  </div>
-  </div>
+   </div>
 </div>
 

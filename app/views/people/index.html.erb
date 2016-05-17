@@ -14,7 +14,8 @@
                   <%= fa_icon "toggle-right", class: "text-purple" %>
                     <div class="wid-icon-info">
                         <p class="text-muted m-b-5 font-13 text-uppercase">Средняя задолженность</p>
-                        <h4 class="m-t-0 m-b-5 counter"><%= number_to_currency(Person.average(:debt), unit: "") %></h4>
+                        </br>
+                        <h4 class="m-t-0 m-b-5 counter"><%= number_to_currency(Person.average(:debt), locale: :ru) %></h4>
                     </div>
                 </div>
             </div>
@@ -26,7 +27,7 @@
                   <%= fa_icon "toggle-up", class: "text-danger" %>
                     <div class="wid-icon-info">
                         <p class="text-muted m-b-5 font-13 text-uppercase">Максимальная задолженность</p>
-                        <h4 class="m-t-0 m-b-5 counter"><%= number_to_currency(Person.maximum(:debt), unit: "") %></h4>
+                        <h4 class="m-t-0 m-b-5 counter"><%= number_to_currency(Person.maximum(:debt), locale: :ru) %></h4>
                     </div>
                 </div>
             </div>
@@ -43,5 +44,10 @@
                 </div>
             </div>
         </div>
+
+    <!-- Графики -->
+
+        
+
     </div>
 </div>

@@ -10,11 +10,10 @@
     });
 });
   </script>
-	<div id="date-select"	>
-		<h4>Выберите интересующий Вас период: 	<%= collection_select :date, :id, Period.all, :id, :description, {:selected => params[:period_id]} %></h4>
+	<div id="date-select">
+		<h4>Выберите интересующий Вас период:	<%= collection_select :date, :id, Period.all, :id, :description, {:selected => params[:period_id]}, {class: 'h5'} %> </h4> 
+
 	</div>
-
-
 
 <div class="col-md-4">
 		<div class="card-box">
@@ -32,12 +31,6 @@
 		</div>	
 </div>
 
-
-<div class="col-md-12">
-	<div class="card-box">
-		<%= high_chart("some_id", @col_chart1) %>
-	</div>	
-</div>
 <div class="col-md-12">
 	<div class="card-box">
 		<%= high_chart("some_id4", @line_debt) %>

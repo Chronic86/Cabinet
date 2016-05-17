@@ -32,24 +32,6 @@ class FinanceController < ApplicationController
 
 #lazy_charts
 @period = Period.all.map{|p| p.description}
-@calc = Finance.all.order(:period_id).joins(:period).group('periods.description').sum(:calculation).values
-@pay = Finance.all.order(:period_id).joins(:period).group('periods.description').sum(:payment).values
-
-#column chart
-      @col_chart1 = LazyHighCharts::HighChart.new('graph') do |f|
-        f.title(text: "Соотношение оплаты и начисления")
-        f.xAxis(categories: @period)
-        f.series(name: "Начисление", yAxis: 0, data: @calc)
-        f.series(name: "Оплата", yAxis: 1, data: @pay)
-
-        f.yAxis [
-          {title: {text: "", margin: 70} },
-          {title: {text: ""}, opposite: true},
-        ]
-
-        f.legend(align: 'right', verticalAlign: 'top', y: 75, x: -50, layout: 'vertical')
-        f.chart({defaultSeriesType: "column"})
-      end
 
 
 #pie_charts
@@ -85,7 +67,7 @@ class FinanceController < ApplicationController
 @line_com4 = Finance.select(:debt, :period_id).
                      where('company_id = 4').
                      order(:period_id).to_a.uniq{|x| x.period_id}.map{|x| x.debt}
-@line_all_com = Finance.select(:debt, :period_id).group(:period_id).sum(:debt).values
+
 
 
       @line_debt = LazyHighCharts::HighChart.new('graph1') do |f|
@@ -96,7 +78,6 @@ class FinanceController < ApplicationController
         f.series(:name=>'ООО Аквасеть', :data=> @line_com2 )
         f.series(:name=>'ООО УК Аквасеть', :data=> @line_com3)
         f.series(:name=>'НПО Центральный', :data=> @line_com4)
-        f.series(:name=>'Общая Задолженность', :data=> @line_all_com)
 
         f.yAxis [
           {title: {text: "Уровень задолженности", margin: 70} },

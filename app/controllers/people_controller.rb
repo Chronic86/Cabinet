@@ -1,22 +1,21 @@
 class PeopleController < ApplicationController
 
 	def index
-		@people_debt_50 = initialize_grid(Person.where('debt < 50000').joins(:locality), name: 'grid50',
-										  enable_export_to_csv: true, 
-										  csv_file_name: 'low_debt')
-		@people_debt_100 = initialize_grid(Person.where('debt > 50000').joins(:locality), name: 'grid100',
-									      enable_export_to_csv: true, 
-										  csv_file_name: 'mid_debt')
 
 
 	end
 
+
 	def show
-		@people_debt_50 = initialize_grid(Person.where('debt < 50000').joins(:locality), name: 'grid50',
+		@date_now = DateTime.now.to_date
+
+		@people_debt = initialize_grid(Person.all.joins(:locality), name: 'grid',
+										  per_page: 15,
 										  enable_export_to_csv: true, 
-										  csv_file_name: 'low_debt')
-		@people_debt_100 = initialize_grid(Person.where('debt > 50000').joins(:locality), name: 'grid100',
-									      enable_export_to_csv: true, 
-										  csv_file_name: 'mid_debt')
+										  csv_file_name: 'Неплательщики')
+	
+		export_grid_if_requested('grid' => 'grid') do
+ 		 
+		end
 	end
 end
