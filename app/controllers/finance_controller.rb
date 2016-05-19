@@ -10,13 +10,13 @@ class FinanceController < ApplicationController
   		if params[:date].blank?
          params[:date] = @last_date.id
       end  
-  			@calculation = Finance.joins(:company).
+  			@calculation = Finance.eager_load(:period).joins(:company).
   					           where('period_id = ?', params[:date]).
   					           group('companies.name').sum(:calculation).to_a
-        @debt = Finance.joins(:company).
+        @debt = Finance.eager_load(:period).joins(:company).
                        where('period_id = ?', params[:date]).
                        group('companies.name').sum(:debt).to_a
-        @payment = Finance.joins(:company).
+        @payment = Finance.eager_load(:period).joins(:company).
                        where('period_id = ?', params[:date]).
                        group('companies.name').sum(:payment).to_a                       
 

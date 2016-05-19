@@ -12,7 +12,7 @@ class InformationController < ApplicationController
 
 		#column chart
 		      @col_chart = LazyHighCharts::HighChart.new('graph1') do |f|
-		        f.title(text: "Соотношение оплаты и начисления")
+		        f.title(text: "Сводная таблица начисления, оплаты и задолженности")
 		        f.xAxis(categories: @period)
 		        f.series(name: "Начисление", yAxis: 0, data: @calc)
 		        f.series(name: "Оплата", yAxis: 1, data: @pay)

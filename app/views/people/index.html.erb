@@ -1,3 +1,4 @@
+
 <div class="wrapper">
   <div class="container">
     <!-- Page-Title -->
@@ -44,10 +45,22 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
 
+        <div class="container">
+            
     <!-- Графики -->
-
-        
-
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="card-box">
+                <%= high_chart("some_id8", @pie_debtor) %>
+            </div>  
+        </div>
+        <div class="col-lg-6">
+            <div class="card-box">
+                <%= high_chart("some_id9", @pie_month_debt) %>
+            </div>  
+        </div>
     </div>
 </div>
