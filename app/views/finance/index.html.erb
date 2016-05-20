@@ -1,15 +1,17 @@
 
 <div class="wrapper">
   <div class="container">
-  <script type="text/javascript">
-  	$(document).ready(function(){
-    $("#date-select select").on("change",function(){
-      val = $(this).val();
-      window.location = '/finance?date='+ val;
-      cache: false
-    });
-});
-  </script>
+
+
+		  <script type="text/javascript">
+		  	$(document).ready(function(){
+		    $("#date-select select").on("change",function(){
+		      val = $(this).val();
+		      window.location = '/finance?date='+ val;
+		      cache: false
+		    });
+		});
+		  </script>
 	<div id="date-select">
 		<h4>Выберите интересующий Вас период:	<%= collection_select :date, :id, Period.all, :id, :description, {:selected => params[:period_id]}, {class: 'h5'} %> </h4> 
 
